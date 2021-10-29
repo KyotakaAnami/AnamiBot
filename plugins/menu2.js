@@ -1,24 +1,4 @@
-/*
-
-   [❗] INGIN BERTANYA TANYA???
-HUBUNGI => 6282298512279
-[❗] ATAU SILAHKAN JOIN
-=> https://chat.whatsapp.com/H1y9YttWaTf67jdzCQ3c64
-
-[❗] SC ORI : NURUTOMO
-[❗] RECODE : RAKU
-
-🙍‍♂️ : "KOK SIMPLE BANGET MENU NYA"
-🧕 : "YAA KAN SAYA NOOB 
-🙍‍♂️ : "KESIAN BADUT YANG SATU INI 🤡"
-🧕 : "N4P4 G45EN4N6?? PUKUL1N 4J4 4N4K P4NT1, M4U N64DU 4M4 S14P4?? 0R4N6 7UA NY4?? CUPU LU"
-🙍‍♂️ : ".............."
-
-👨‍👩‍👧‍👧 : DARIPADA RIBUT BANTU ADMIN 
-YOK DENGAN CARA SUBSCRIBE
-YT •Anami
- 
-*/
+let { JSDOM } = require('jsdom')
 let fs = require ('fs')
 const { createHash } = require('crypto') 
 let util = require('util')
@@ -30,28 +10,21 @@ let PhoneNumber = require('awesome-phonenumber')
 const os = require('os')
 let { performance } = require('perf_hooks')
 let { MessageType, mentionedJid } = require('@adiwajshing/baileys')
-
-//========== BATASSS NGABBB ==========//
-
-let handler  = async (m, { conn, usedPrefix: _p, command }) => {
-let old = performance.now()
-await conn.fakeReply(m.chat, '*[❗] Ｌｏｄｉｎｇ．．．*', '0@s.whatsapp.net', '', 'status@broadcast')
+let handler  = async (m, { conn, usedPrefix: _p, args }) => {
+let neww = performance.now()
+let teks = `${args[0]}`.toLowerCase()
 const chats = conn.chats.all()
 const groups = chats.filter(v => v.jid.endsWith('g.us'))
+const petik = '```'
 const groupsIn = groups.filter(v => !v.read_only)
-let ZeroGans = './src/logo.png'
-let pepe = 'https://i.ibb.co/Q9Wj9vh/IMG-20210817-WA0001.jpg'
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-
+let nani = 'https://telegra.ph/file/bb4e04d8ab841bd0fe71f.png' 
   try {
-    ZeroGans = await conn.getProfilePicture(m.sender)
+    nani = await conn.getProfilePicture(m.sender)
   } catch (e) {
 
   } finally {
-    let neww = performance.now()
-    let old = performance.now()
-    let package = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json')))
-    const job = global.DATABASE.data.users[m.sender].level
+const job = global.DATABASE.data.users[m.sender].level
   var zerojob = 'Pengangguran'
   
   	      if (job >= '0' && job <= '5') {
@@ -81,65 +54,62 @@ let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? c
  }
  
   	const lbars = global.DATABASE.data.users[m.sender].level
-  var zerobars = '[â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’]'
+  var zerobars = '[▒▒▒▒▒▒▒▒▒]'
 
          if (lbars >= '0' && lbars <= '5') {
-                zerobars = '[â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’â–’]'
+                zerobars = '[▒▒▒▒▒▒▒▒▒▒]'
          } else if (lbars >= '5' && lbars <= '10') {
-				zerobars = '[â–ˆâ–’â–’â–’â–’â–’â–’â–’â–’â–’â–’]'
+				zerobars = '[█▒▒▒▒▒▒▒▒▒]'
 		 } else if (lbars >= '10' && lbars <= '20') {
-				zerobars = '[â–ˆâ–ˆâ–’â–’â–’â–’â–’â–’â–’â–’â–’]'
+				zerobars = '[██▒▒▒▒▒▒▒▒]'
 		} else if (lbars >= '20' && lbars <= '30') {
-				zerobars = '[â–ˆâ–ˆâ–ˆâ–’â–’â–’â–’â–’â–’â–â–’]'
+				zerobars = '[███▒▒▒▒▒▒▒]'
 		} else if (lbars >= '30' && lbars <= '40') {
-				zerobars = '[â–ˆâ–ˆâ–ˆâ–ˆâ–’â–’â–’â–’â–’â–â–’]'
+				zerobars = '[████▒▒▒▒▒▒]'
 		} else if (lbars >= '40' && lbars <= '50') {
-				zerobars = '[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–’â–’â–’â–’â–’â–’]'
+				zerobars = '[█████▒▒▒▒▒]'
 		} else if (lbars >= '50' && lbars <= '60') {
-				zerobars = '[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–’â–’â–’â–’â–’]' 
+				zerobars = '[██████▒▒▒▒]' 
 		} else if (lbars >= '60' && lbars <= '70') {
-				zerobars = '[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–’â–’â–’]'
+				zerobars = '[███████▒▒▒]'
 		} else if (lbars >= '70' && lbars <= '80') {
-				zerobars = '[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–’â–’]'
+				zerobars = '[████████▒▒]'
 		} else if (lbars >= '80' && lbars <= '90') {
-				zerobars = '[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–’]'
+				zerobars = '[█████████▒]'
 		} else if (lbars >= '90' && lbars <= '100') {
-				zerobars = '[â–ˆâ–ˆâ–’â–’â–’â–’â–’â–ˆâ–ˆâ–ˆâ–ˆ]'
+				zerobars = '[██████████]'
 		} else { 
-				zerobars = '[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ]'
+				zerobars = '[██████████]'
 		} 
 
 const jam = moment.tz('Asia/Jakarta').format('HH')
 
- var ucapanWaktu = 'Selamat Pagi '
+ var ucapanWaktu = 'Selamat Pagi 🌄'
 
 
 
-				if (jam >= '05' && jam <= '10') {
+				if (jam >= '03' && jam <= '10') {
 
-				ucapanWaktu = 'Selamat Pagi'
+				ucapanWaktu = 'Selamat Pagi 🌄'
 
 				} else if (jam >= '10' && jam <= '13') {
 
-				ucapanWaktu = 'Selamat Siang'
+				ucapanWaktu = 'Selamat Siang ☀️'
 
 				} else if (jam >= '13' && jam <= '18') {
 
-				ucapanWaktu = 'Selamat Sore'
+				ucapanWaktu = 'Selamat Sore 🌅'
 
 				} else if (jam >= '18' && jam <= '23') {
 
-				ucapanWaktu = 'Selamat Malam'
-				
-				} else if (jam >= '0' && jam <= '5') {
-
-				ucapanWaktu = 'Selamat Dini hari'
+				ucapanWaktu = 'Selamat Malam 🌙'
 
 				} else {
 
-				ucapanWaktu = 'Selamat Dini Hari'
+				ucapanWaktu = 'Selamat Malam 🌙'
 
 				}
+let package = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json')))
     let { exp, limit, level, role, age, money, registered, healt, coin, tigame } = global.DATABASE.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let premium = global.prems.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
@@ -150,6 +120,7 @@ const jam = moment.tz('Asia/Jakarta').format('HH')
     let gmt = new Date(0).getTime() - new Date('1 January 1970').getTime()
     let weton = ['Pahing', 'Pon','Wage','Kliwon','Legi'][Math.floor(((d * 1) + gmt) / 84600000) % 5]
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
+    let totalfeature = Object.values(global.plugins).filter(v => v.help && v.tags).length
         const dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
       day: 'numeric',
       month: 'long',
@@ -162,13 +133,20 @@ const jam = moment.tz('Asia/Jakarta').format('HH')
     })
     const wita = moment.tz('Asia/Makassar').format("HH:mm:ss")
     const wit = moment.tz('Asia/Jayapura').format("HH:mm:ss")
-    const hariRaya = new Date('dec 31, 2021 23:59:59')
+    const hariRaya = new Date('December 31, 2021 23:59:59')
     const sekarang = new Date().getTime()
     const Selisih = hariRaya - sekarang
     const jhari = Math.floor( Selisih / (1000 * 60 * 60 * 24));
     const jjam = Math.floor( Selisih % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
     const mmmenit = Math.floor( Selisih % (1000 * 60 * 60) / (1000 * 60))
     const ddetik = Math.floor( Selisih % (1000 * 60) / 1000)
+    const ultah = new Date('January 3, 2022 23:59:59')
+    const sekarat = new Date().getTime() 
+    const Kurang = ultah - sekarat
+    const ohari = Math.floor( Kurang / (1000 * 60 * 60 * 24));
+    const ojam = Math.floor( Kurang % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
+    const onet = Math.floor( Kurang % (1000 * 60 * 60) / (1000 * 60))
+    const detek = Math.floor( Kurang % (1000 * 60) / 1000)
     let time = d.toLocaleTimeString(locale, {
       hour: 'numeric',
       minute: 'numeric',
@@ -187,23 +165,22 @@ const jam = moment.tz('Asia/Jakarta').format('HH')
     let _uptime = process.uptime() * 1000
     let uptime = clockString(_uptime)
     let totalgc = Object.keys(global.DATABASE._data.chats).length
-    let totalsend = global.DATABASE.data.stats['menu.js'].total
     let rtotalreg = 0
     rtotalreg = Object.values(global.DATABASE._data.users).filter(user => user.registered == true).length
-    let tags = {
+        let tags = {
   'main': 'Start Bot',
       'daftar': 'Daftar',
       'abs': 'Absensi Menu', 
       'xp': 'Exp & Limit',
       'rpg': 'Adventure Menu (NEW)', 
-      'tutor': 'Tutorial •AnamiBot',
+      'tutor': 'Tutorial �AnamiBot',
       'hadiah': 'Hadiah',
      ' apk': 'Apk Downloader', 
       'dewasa': '18+ Menu',
       'database': 'Database',
       'group': 'Group Menu',
       'anime': 'Anime Menu',
-      'panik': 'Prank Menu',
+      'panik': 'Gtwlah',
       'cs': 'Custom Sticker',
       'sticker': 'Creator Menu',
       'game': 'Fun Menu',
@@ -228,6 +205,7 @@ const jam = moment.tz('Asia/Jakarta').format('HH')
       'owner': 'Owner Menu',
       'host': 'Host Menu',
       'info': 'Information',
+      'thnks': 'Thanks To', 
     }
     for (let plugin of Object.values(global.plugins))
       if (plugin && 'tags' in plugin)
@@ -250,70 +228,73 @@ const jam = moment.tz('Asia/Jakarta').format('HH')
     }
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `
-Hello *%name*
-Im *${conn.getName(conn.user.jid)}* And You Use Prefix *%p*
+${petik}Hello %name${petik} 
+${petik}Im ${conn.getName(conn.user.jid)} And You Use Prefix %p${petik} 
 
-â ï¼©ï½Žï½†ï½ ï¼¢ï½ï½”
-❒ Bot Name : *${conn.getName(conn.user.jid)}*
-❒ Browser : *${conn.browserDescription[1]}*
-❒ Wa Web Name : *${conn.browserDescription[0]}*
-❒ Wa Web Version : *${conn.browserDescription[2]}*
-❒ WhatsApp Version : *${conn.user.phone.wa_version}*
-❒ Phone : *${conn.user.phone.device_manufacturer}*
-❒ Version Android : Android ${conn.user.phone.os_version}
-❒ Hostname Server : ${os.hostname()}
-❒ Seri Phone : *${conn.user.phone.device_model}*
-❒ Version : *%version*
-❒ Speed : ${neww} *ms*
-❒ Level Bars : *${zerobars}*
-❒ Total Features : *1000+*
+❏ Ｉｎｆｏ Ｂｏｔ
+❏ Bot Name : ${petik} ${conn.getName(conn.user.jid)} ${petik} 
+❏ Ulang Tahun Owner : ${petik} ${ohari} Hari ${ojam} Jam ${onet} Menit ${detek} Detik ${petik} 
+❏ Browser : ${petik} ${conn.browserDescription[1]} ${petik} 
+❏ Wa Web Name : ${petik} ${conn.browserDescription[0]} ${petik} 
+❏ Wa Web Version : ${petik} ${conn.browserDescription[2]} ${petik} 
+❏ WhatsApp Version : ${petik} ${conn.user.phone.wa_version} ${petik} 
+❏ Phone : ${petik} ${conn.user.phone.device_manufacturer} ${petik} 
+❏ Version Android : ${petik} Android ${conn.user.phone.os_version} ${petik} 
+❏ Hostname Server : ${petik} ${os.hostname()} ${petik} 
+❏ Battery : ${conn.battery ? conn.battery.value : '100'}℅
+❏ Seri Phone : ${petik} ${conn.user.phone.device_model} ${petik} 
+❏ Version : ${petik} %version ${petik} 
+❏ Speed : ${petik} ${neww} ms ${petik} 
+❏ Total Features : ${petik} 1000+ ${petik} 
 
-❒ Click Here To Join
-❒ *https://bit.ly/grupanamibot*
+❏ ${petik} Join Here ${petik} 
+❏ ${petik} https://bit.ly/grupanamibot ${petik} 
 
-â ï¼©ï½Žï½†ï½ ï¼µï½“ï½…ï½’
-❒ UserName : *%name*
-❒ Serial Number : *${sn}*
-❒ Prefix :  *%p* 
-❒ Mention : *@${m.sender.replace(/@.+/, '')}*
-❒ Age : *${registered ? '' + age : ''}*
-❒ Phone Number : *${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}*
-❒ Registered : *${registered ? 'Yes': 'No'}*
-❒ Premium User : *${premium ? 'Yes': 'No'}*
-❒ Pekerjaan : *${zerojob}*
-❒ Role : *%role*
-❒ Health : *%healt*
-❒ Coin : *%coin*
-❒ Money : *RP %money*
-❒ Ticket : *%limit*
-❒ Game Limit : *%tigame*
-❒ Level : *%level*
-❒ Exp : *%exp*
-❒ Exp To Levelup : *%xp4levelup*
-❒ Total Exp : *%totalexp*
+❏ Ｉｎｆｏ Ｕｓｅｒ
+❏ UserName : ${petik} %name ${petik} 
+❏ Serial Number : ${petik} ${sn} ${petik} 
+❏ Prefix : ${petik} %p ${petik}  
+❏ Mention : ${petik} @${m.sender.replace(/@.+/, '')} ${petik} 
+❏ Age : ${petik} ${registered ? '' + age : ''} ${petik} 
+❏ Phone Number : ${petik} ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')} ${petik} 
+❏ Registered : ${petik} ${registered ? 'Yes': 'No'} ${petik} 
+❏ Premium User : ${petik} ${premium ? 'Yes': 'No'} ${petik} 
+❏ Pekerjaan : ${petik} ${zerojob} ${petik} 
+❏ Role : ${petik} %role ${petik} 
+❏ Level Bars : ${petik} ${zerobars} ${petik} 
+❏ Health : ${petik} %healt ${petik} 
+❏ Coin : ${petik} %coin ${petik} 
+❏ Money : ${petik} RP %money ${petik} 
+❏ Ticket : ${petik} %limit ${petik} 
+❏ Game Limit : ${petik} %tigame ${petik} 
+❏ Level : ${petik} %level ${petik} 
+❏ Exp : ${petik} %exp ${petik} 
+❏ Exp To Levelup : ${petik} %xp4levelup ${petik} 
+❏ Total Exp : ${petik} %totalexp ${petik} 
 
-â ï¼¤ï½ï½”ï½… ï¼† ï¼´ï½‰ï½ï½…
-❒ Day : *%week*
-❒ Date : *%date*
-❒ Weton : *%weton*
-❒ Islamic Date : *${dateIslamic}*
-❒ Time : *%time WIB*
-❒ Time : *${wit} WIT*
-❒ Time : *${wita} WITA*
+❏ Ｄａｔｅ ＆ Ｔｉｍｅ
+❏ Day : ${petik} %week ${petik} 
+❏ Date : ${petik} %date ${petik} 
+❏ Weton : ${petik} %weton ${petik} 
+❏ Tahun Baru : ${petik} ${jhari} Hari ${jjam} Jam ${mmmenit} Menit ${ddetik} Detik Lagi ${petik}
+❏ Islamic Date : ${petik} ${dateIslamic} ${petik} 
+❏ Time : ${petik} %time WIB ${petik} 
+❏ Time : ${petik} ${wit} WIT ${petik} 
+❏ Time : ${petik} ${wita} WITA ${petik} 
 
-â ï¼¤ï½ï½”ï½
-❒ Uptime : *%uptime*
-❒ Total Hit : *%totalsend*
-❒ Main Uptime : *%muptime*
-❒ Users In Database : *%totalreg Users*
-❒ Registered : *%rtotalreg*
-❒ Total GC : *%totalgc*
+❏ Ｄａｔａ
+❏ Uptime : ${petik} %uptime ${petik} 
+❏ Main Uptime : ${petik} %muptime ${petik} 
+❏ Users In Database : ${petik} %totalreg Users ${petik} 
+❏ Registered : ${petik} %rtotalreg ${petik} 
+❏ Total GC : ${petik} %totalgc ${petik} 
 
-%readmore`
-    let header = conn.menu.header || '╭───%category───❏'
-    let body   = conn.menu.body   || '│❒ *%cmd%islimit*'
-    let footer = conn.menu.footer || '╰──────❏ '
-    let after  = conn.menu.after  || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + `\n\n*THANKS TO*\n\n*❒ Nurutomo*\n*❒ RendyCraft047*\n*❒ Ibnu NR*\n❒ Caliph*\n*❒ Raku*\n*❒ Indra*\n*❒ Penyedia Apikey*`
+CLICK HERE
+`
+    let header = conn.menu.header || '༺ %category ༻'
+    let body   = conn.menu.body   || '│ 𖣵 %cmd%islimit'
+    let footer = conn.menu.footer || '╰────\n'
+    let after  = conn.menu.after  || (conn.user.jid == global.conn.user.jid ? '' : `Powered By @${global.conn.user.jid.split`@`[0]}`) + `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\``
     let _text  = before + '\n'
     for (let tag in groups) {
       _text += header.replace(/%category/g, tags[tag]) + '\n'
@@ -336,27 +317,22 @@ Im *${conn.getName(conn.user.jid)}* And You Use Prefix *%p*
       totalexp: exp,
       xp4levelup: max - exp,
       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
-      level, limit, name, weton, week, date, time, totalreg, totalgc, rtotalreg, role, healt, money, coin, tigame, totalsend, sn, 
+      level, limit, name, weton, week, date, time, totalreg, totalgc, rtotalreg, role, healt, money, coin, tigame, sn, 
       readmore: readMore
     }
-text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => ''+replace[name])
-
-    conn.sendMessage(m.chat, '', 'conversation', { quoted: m, contextInfo: { externalAdReply :{
-mediaUrl: 'https://youtube.com/channel/UCNs0hU8ylkyRLn_U-xbJLIg',
-mediaType: 2,
-title: 'List Menu •AnamiBot',
-body: '',
-thumbnailUrl: 'https://i.ibb.co/Q9Wj9vh/IMG-20210817-WA0001.jpg',
-}}) 
-handler.help = ['o']
-handler.tags = ['o']
-handler.command = ['o']
+    text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => ''+replace[name])
+   await conn.send2ButtonLoc(m.chat, await (await fetch(nani + teks)).buffer(), text.trim(), '', '⋮☰ INFO BOT', '.alive', '⋮☰ OWNER', '.owner', m)
+  } catch (e) {
+    conn.reply(m.chat, 'Maaf, Menu Kami Sedang Error, Silahkan Coba Lagi Nanti', m)
+    throw e
+  }
+}
+handler.command = /^(allmenu)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
 handler.group = false
 handler.private = false
-handler.register = false
 
 handler.admin = false
 handler.botAdmin = false
@@ -374,4 +350,7 @@ function clockString(ms) {
   let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [h, m, s].map(v => v.toString().padStart(2, 0) ).join(':')
-} 
+}
+function pickRandom(list) {
+  return list[Math.floor(list.length * Math.random())]
+}
